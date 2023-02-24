@@ -13,6 +13,10 @@ func ConfigRoutes(router *gin.Engine) *gin.Engine {
 		{
 			home.GET("/", controllers.Home)
 		}
+		aluno := main.Group("aluno")
+		{
+			aluno.GET("/", controllers.GetAllAlunos)
+		}
 	}
 
 	return router
